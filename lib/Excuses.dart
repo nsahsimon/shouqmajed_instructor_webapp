@@ -18,7 +18,7 @@ class _ExcusesState extends State<Excuses> {
         backgroundColor: Color.fromARGB(255, 126, 13, 13),
       ),
 
-      drawer: const NavigationDrawer() ,
+      drawer: const CustomNavigationDrawer() ,
       // Logo section
       body:SingleChildScrollView(
         child: Column(

@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color.fromARGB(255, 126, 13, 13),
       ),
 
-      drawer: const NavigationDrawer() ,
+      drawer: const CustomNavigationDrawer() ,
 
       backgroundColor: Colors.grey[300],
       // Logo section
@@ -430,8 +430,8 @@ class GDPData {
     );
 
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({super.key});
+class CustomNavigationDrawer extends StatelessWidget {
+  const CustomNavigationDrawer({super.key});
         
   @override
   Widget build(BuildContext context) {
