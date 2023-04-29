@@ -21,20 +21,11 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -60,5 +51,33 @@ class DefaultFirebaseOptions {
     authDomain: 'bahrain-student-app.firebaseapp.com',
     storageBucket: 'bahrain-student-app.appspot.com',
     measurementId: 'G-SQXZK0F47J',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyCH5oA5y5Fxl1W7fXWMX4sL8agyvUOOROw',
+    appId: '1:46059946446:android:4a1ab0aeaea7ee3f49eb9f',
+    messagingSenderId: '46059946446',
+    projectId: 'bahrain-student-app',
+    storageBucket: 'bahrain-student-app.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCVCMFZzofpATECEdZ3quydqAUNAwCqqdw',
+    appId: '1:46059946446:ios:66d1b472134a9fb849eb9f',
+    messagingSenderId: '46059946446',
+    projectId: 'bahrain-student-app',
+    storageBucket: 'bahrain-student-app.appspot.com',
+    iosClientId: '46059946446-o5mnvk97ch5iee58m14j9g5qhhte0ej9.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instructor',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCVCMFZzofpATECEdZ3quydqAUNAwCqqdw',
+    appId: '1:46059946446:ios:66d1b472134a9fb849eb9f',
+    messagingSenderId: '46059946446',
+    projectId: 'bahrain-student-app',
+    storageBucket: 'bahrain-student-app.appspot.com',
+    iosClientId: '46059946446-o5mnvk97ch5iee58m14j9g5qhhte0ej9.apps.googleusercontent.com',
+    iosBundleId: 'com.example.instructor',
   );
 }

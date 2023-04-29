@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:46059946446:android:0f3065daf3d5b25c49eb9f",
+        "mobilesdk_app_id": "1:46059946446:android:4a1ab0aeaea7ee3f49eb9f",
         "android_client_info": {
           "package_name": "com.example.instructor"
         }
@@ -29,6 +29,13 @@
             {
               "client_id": "46059946446-5p4h8rmm5p87uv9gpg0386vpk8rh41od.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "46059946446-o5mnvk97ch5iee58m14j9g5qhhte0ej9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instructor"
+              }
             }
           ]
         }
@@ -58,6 +65,13 @@
             {
               "client_id": "46059946446-5p4h8rmm5p87uv9gpg0386vpk8rh41od.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "46059946446-o5mnvk97ch5iee58m14j9g5qhhte0ej9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instructor"
+              }
             }
           ]
         }

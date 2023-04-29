@@ -4,17 +4,14 @@ import 'package:flutter/gestures.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:flutter/material.dart';
+import 'package:instructor/utils/firestore/read.dart';
+import 'package:instructor/widgets/firebase_image.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'data/user_data.dart';
 
-const List<String> course = <String>[
-  '',
-  'ITIS428',
-  'ITIS468',
-  'ITIS452',
-  'ITIS414'
-];
+List<String> courses = <String>[""];
 const List<String> section = <String>[
   '',
   '1',
@@ -44,6 +41,9 @@ class _HomeState extends State<Home> {
     });
   }
 
+
+
+
   // Chart
   late List<GDPData> _chartData;
   late TooltipBehavior _tooltipBehavior;
@@ -51,6 +51,13 @@ class _HomeState extends State<Home> {
   void initState() {
     _chartData = getChartData();
     _tooltipBehavior = TooltipBehavior();
+    Future(()async{
+      List<String> temp_courses = await getInstructorsCourses();
+      setState(() {
+        courses.addAll(temp_courses);
+        //courses = temp_courses;
+      });
+    });
     super.initState();
   }
 
@@ -528,15 +535,14 @@ Widget buildHeader(BuildContext context) => Container(
       child: Column(
         children: [
           CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 52,
-            //backgroundImage: ,
+            radius: 75,
+            child: FirebaseImage(
+              imageUrl: myUserData.profilePicUrl,
+            ),
           ),
-          SizedBox(
-            height: 12,
-          ),
+          SizedBox(height: 12,),
           Text(
-            'Student@stu.uob.edu.bh',
+            myUserData.name,
             style: TextStyle(fontSize: 18, color: Colors.white),
           ),
         ],
@@ -614,7 +620,7 @@ class DropdownButtonCourse extends StatefulWidget {
 }
 
 class _DropdownButtonCourseState extends State<DropdownButtonCourse> {
-  String dropdownValue = course.first;
+  String dropdownValue = courses.first;
 
   @override
   Widget build(BuildContext context) {
@@ -633,7 +639,7 @@ class _DropdownButtonCourseState extends State<DropdownButtonCourse> {
           dropdownValue = value!;
         });
       },
-      items: course.map<DropdownMenuItem<String>>((String value) {
+      items: courses.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),

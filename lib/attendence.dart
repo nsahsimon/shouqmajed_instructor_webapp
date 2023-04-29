@@ -317,7 +317,7 @@ class DropdownButtonCourse extends StatefulWidget {
 }
 
 class _DropdownButtonCourseState extends State<DropdownButtonCourse> {
-  String dropdownValue = course.first;
+  String dropdownValue = courses.first;
 
   @override
   Widget build(BuildContext context) {
@@ -336,7 +336,7 @@ class _DropdownButtonCourseState extends State<DropdownButtonCourse> {
           dropdownValue = value!;
         });
       },
-      items: course.map<DropdownMenuItem<String>>((String value) {
+      items: courses.map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),
