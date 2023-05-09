@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:instructor/Excuses.dart';
+import 'package:instructor/attendence.dart';
 import 'package:instructor/login.dart';
 import 'package:instructor/home.dart';
+import 'package:instructor/attendence.dart';
 import 'package:instructor/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -20,6 +22,7 @@ void main() async {
     routes: {
       '/': (context) => login(),
       '/home': (context) => Home(),
+      '/attendence': (context) => attendence(),
       '/excuses': (context) => Excuses(),
     },
   ));
