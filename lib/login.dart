@@ -37,6 +37,13 @@ class loginState extends State<login> {
     FocusScope.of(context).requestFocus(inputNode);
   }
 
+  Future<void> forgotPassword() async{
+    startLoading();
+    await auth.forgotPassword(usernameController.text);
+    stopLoading();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
@@ -187,7 +194,19 @@ class loginState extends State<login> {
                     ),
                   ),
                 ),
-              )
+              ),
+
+                  //forgot password
+                  SizedBox(height: 20),
+                  TextButton(
+                      onPressed: forgotPassword,
+                      child: Text(
+                        "Forgot password?",
+                        style: TextStyle(
+                          color: Colors.white,
+                        )
+                      ))
+
             ]),
           ),
         ),
