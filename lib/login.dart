@@ -37,13 +37,6 @@ class loginState extends State<login> {
     FocusScope.of(context).requestFocus(inputNode);
   }
 
-  Future<void> forgotPassword() async{
-    startLoading();
-    await auth.forgotPassword(usernameController.text);
-    stopLoading();
-  }
-
-
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
@@ -93,7 +86,7 @@ class loginState extends State<login> {
               ),
               Center(
                 child: Text(
-                  'Student Attendence System',
+                  'Student Attendance System',
                   // ignore: prefer_const_constructors
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -112,56 +105,62 @@ class loginState extends State<login> {
               SizedBox(height: 50),
 
               //email textfield
-              Padding(
-                padding: const EdgeInsets.fromLTRB(290, 1, 290, 1),
-                child: TextField(
-                  controller: usernameController,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
+              SizedBox( height: 42,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(390, 1, 390, 1),
+                  child: TextField(
+                    controller: usernameController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      hintText: 'Email',
+                      hintStyle: TextStyle(fontSize: 14),
+                      fillColor: Colors.grey[200],
+                      filled: true,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    hintText: 'Email',
-                    fillColor: Colors.grey[200],
-                    filled: true,
                   ),
                 ),
               ),
 
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               //password textfiled
-              Padding(
-                padding: const EdgeInsets.fromLTRB(290, 1, 290, 10),
-                child: TextField(
-                  controller: passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
+              SizedBox( height: 50,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(390, 1, 390, 10),
+                  child: TextField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      hintText: 'Password',
+                      hintStyle: TextStyle(fontSize: 14),
+                      fillColor: Colors.grey[200],
+                      filled: true,
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.red),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    hintText: 'Password',
-                    fillColor: Colors.grey[200],
-                    filled: true,
                   ),
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 15),
 
               // sign in buttun
               Container(
-                height: 60, //60 360
-                width: 360,
+                height: 45, //60 360
+                width: 340,
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 90, 4, 4),
                     border: Border.all(
@@ -178,11 +177,7 @@ class loginState extends State<login> {
                         password: passwordController.text,
                         context: context);
                     stopLoading();
-                    // Navigator.pushNamed(context, '/home');
                   },
-                  // style: ElevatedButton.styleFrom(
-                  //   backgroundColor: Color.fromARGB(255, 140, 21, 21),
-                  // ),
                   child: Center(
                     child: Text(
                       'Login',
@@ -195,18 +190,14 @@ class loginState extends State<login> {
                   ),
                 ),
               ),
-
-                  //forgot password
-                  SizedBox(height: 20),
-                  TextButton(
-                      onPressed: forgotPassword,
-                      child: Text(
-                        "Forgot password?",
-                        style: TextStyle(
-                          color: Colors.white,
-                        )
-                      ))
-
+              /////////////// Forget Password
+              SizedBox(height: 10,),
+              TextButton(
+                onPressed: () {  },
+                child: Text("Forgot Password?",
+                style: TextStyle(color: Colors.white),
+                ),
+              )
             ]),
           ),
         ),

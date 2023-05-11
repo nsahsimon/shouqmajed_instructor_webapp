@@ -354,7 +354,7 @@ class _HomeState extends State<Home> {
                           child: Column(children:[Text('20198626',style: TextStyle(color: Color.fromARGB(255, 126, 13, 13)),)]),
                         ),  
                         Padding(padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                          child: Column(children:[Text('Shouq Faisl')]),
+                          child: Column(children:[Text('Shouq Faisal')]),
                         ), 
                         Padding(padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Column(children:[if(isChecked1==false)Text('Absent'),if(isChecked1==true)Text('Present'),if(excused1==true&&isChecked1==false)Text('Excused')]),
@@ -366,6 +366,7 @@ class _HomeState extends State<Home> {
                           child: Column(children:[Checkbox(value: isChecked1,activeColor: Colors.blue,
                            onChanged: (newBool){setState(() {
                              isChecked1 = newBool;
+                             
                            });}
                            )]),
                         ),
