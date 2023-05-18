@@ -302,7 +302,7 @@ class _HomeState extends State<Home> {
             Row(
               children: [
                 SizedBox(width: 100,height: 100,),
-                Text("Attendence Sheet",
+                Text("Attendance Sheet",
                     style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold),
                     ),                     
               ],
@@ -333,7 +333,7 @@ class _HomeState extends State<Home> {
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                          child:Column(children:[Text('Attendence Status', style: TextStyle(fontSize: 20.0,color: Colors.white))]),  
+                          child:Column(children:[Text('Attendance Status', style: TextStyle(fontSize: 20.0,color: Colors.white))]),
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -341,7 +341,7 @@ class _HomeState extends State<Home> {
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                          child: Column(children:[Text('Mark Attendence', style: TextStyle(fontSize: 20.0,color: Colors.white))]),
+                          child: Column(children:[Text('Mark Attendance', style: TextStyle(fontSize: 20.0,color: Colors.white))]),
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),

@@ -71,17 +71,3 @@ Future<bool> getUserDataFromFirestore() async {
   }
   return false;
 }
-
-
-Future<void> forgotPassword(String email) async{
-  FirebaseFirestore db = FirebaseFirestore.instance;
-  FirebaseAuth auth = FirebaseAuth.instance;
-  try {
-    await auth.sendPasswordResetEmail(email: email);
-    Fluttertoast.showToast(msg: "Password reset email sent to $email");
-  }catch(e) {
-    Fluttertoast.showToast(msg: "$e");
-    debugPrint("$e");
-  }
-
-}
